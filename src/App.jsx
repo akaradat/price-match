@@ -5,6 +5,7 @@ import ProductDetail from './ProductDetail';
 import smallIcon from './assets/small.svg';
 import mediumIcon from './assets/medium.svg';
 import resetIcon from './assets/reset.svg';
+import logoIcon from './assets/logo.png';
 
 function App() {
   window.dataLayer.push({
@@ -63,7 +64,10 @@ function App() {
   return (
     <div className="min-h-dvh flex flex-col">
       <header className="w-full bg-teal-500 text-white p-2 flex justify-between items-center z-30">
-        <h1 className="text-xl font-bold">PriceMatch เทียบราคา</h1>
+        <div class="flex items-center space-x-2">
+          <img src={logoIcon} alt="Logo" class="w-8 h-8" />
+          <h1 class="text-xl font-bold">PriceMatch เทียบราคา</h1>
+        </div>
         <div className="flex space-x-4">
           <label className="inline-flex items-center cursor-pointer">
             <span className="text-sm font-medium text-white">
@@ -81,11 +85,8 @@ function App() {
       </header>
       <div className="relative flex-grow flex flex-col">
         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-          <button
-            className={`bg-teal-300 p-2 rounded-full shadow-md ${isRotating ? 'animate-spin-fast' : ''}`}
-            onClick={onReset}
-          >
-            <img src={resetIcon} alt="Reset" className="w-8 h-8" />
+          <button className={`bg-teal-300 p-2 rounded-full shadow-md}`} onClick={onReset}>
+            <img src={resetIcon} alt="Reset" className={`w-8 h-8 ${isRotating ? 'animate-spin-fast' : ''}`} />
           </button>
         </div>
 
