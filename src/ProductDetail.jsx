@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import NumericInput from './NumericInput';
 
 function ProductDetail({
+  name,
   bgColor,
   icon,
   isAdvanced,
@@ -44,21 +45,21 @@ function ProductDetail({
       </div>
       <div className="w-full max-w-md">
         <label className="block mb-2 font-semibold">{t('price')}</label>
-        <NumericInput value={price} setValue={setPrice} step={5} />
+        <NumericInput value={price} setValue={setPrice} step={5} name={`${name}-price`} />
 
         <label className="block mb-2 font-semibold">{t('quantity')}</label>
 
         <div className={`flex items-center ${isAdvanced ? '' : 'hidden'}`}>
           <div className="w-1/3">
-            <NumericInput value={quantity} setValue={setQuantity} step={1} min={1} />
+            <NumericInput value={quantity} setValue={setQuantity} step={1} min={1} name={`${name}-quantity`} />
           </div>
           <div className="w-2/3 ml-2">
-            <NumericInput value={volumn} setValue={setVolumn} step={50} min={1} />
+            <NumericInput value={volumn} setValue={setVolumn} step={50} min={1} name={`${name}-volumn`} />
           </div>
         </div>
 
         <div className={`${isAdvanced ? 'hidden' : ''}`}>
-          <NumericInput c value={quantity} setValue={setQuantity} step={1} min={1} />
+          <NumericInput c value={quantity} setValue={setQuantity} step={1} min={1} name={`${name}-quantity-only`} />
         </div>
 
         <div className={`p-4 mt-4 rounded-lg shadow-md text-center text-black ${summaryBackgroundColor}`}>

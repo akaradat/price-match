@@ -2,17 +2,32 @@ import React from 'react';
 import upIcon from './assets/up.svg';
 import downIcon from './assets/down.svg';
 
-function NumericInput({ value, setValue, min = 0, step = 1 }) {
+function NumericInput({ name, value, setValue, min = 0, step = 1 }) {
   const handleIncrement = () => {
     setValue(value + step);
+
+    window.dataLayer.push({
+      event: 'increment_button_clicked',
+      name,
+    });
   };
 
   const handleDecrement = () => {
     setValue(Math.max(min, value - step));
+
+    window.dataLayer.push({
+      event: 'decrement_button_clicked',
+      name,
+    });
   };
 
   const handleChange = (e) => {
     setValue(+e.target.value);
+
+    window.dataLayer.push({
+      event: 'manual_input',
+      name,
+    });
   };
 
   return (

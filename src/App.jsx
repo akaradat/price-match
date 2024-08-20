@@ -7,14 +7,26 @@ import mediumIcon from './assets/medium.svg';
 import resetIcon from './assets/reset.svg';
 
 function App() {
+  window.dataLayer.push({
+    event: 'pageview',
+    page: {
+      url: location,
+      title: document.title,
+    }
+  });
+
   const { t } = useTranslation();
 
   const [isAdvanced, setIsAdvanced] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
 
   const toggleMode = (e) => {
-    console.log(e.target.value);
     setIsAdvanced((prevMode) => !prevMode);
+
+    window.dataLayer.push({
+      event: 'toggle_mode',
+      mode: isAdvanced ? 'basic' : 'advanced',
+    });
   };
 
   const [price1, setPrice1] = useState(0);
@@ -38,6 +50,10 @@ function App() {
     setQuantity2(1);
     setVolumn2(100);
     setIsRotating(true);
+
+    window.dataLayer.push({
+      event: 'reset_button_clicked',
+    });
 
     setTimeout(() => {
       setIsRotating(false);
@@ -74,6 +90,7 @@ function App() {
         </div>
 
         <ProductDetail
+          name="product1"
           bgColor="bg-gray-100"
           icon={smallIcon}
           isAdvanced={isAdvanced}
@@ -87,6 +104,7 @@ function App() {
           otherPriceQuantityRatio={ownPriceQuantityRatio2}
         />
         <ProductDetail
+          name="product2"
           bgColor="bg-gray-200"
           icon={mediumIcon}
           isAdvanced={isAdvanced}
