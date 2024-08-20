@@ -2,13 +2,13 @@ import React from 'react';
 import upIcon from './assets/up.svg';
 import downIcon from './assets/down.svg';
 
-function NumericInput({ value, setValue, step = 1 }) {
+function NumericInput({ value, setValue, min = 0, step = 1 }) {
   const handleIncrement = () => {
     setValue(value + step);
   };
 
   const handleDecrement = () => {
-    setValue(Math.max(0, value - step));
+    setValue(Math.max(min, value - step));
   };
 
   const handleChange = (e) => {
@@ -21,7 +21,7 @@ function NumericInput({ value, setValue, step = 1 }) {
         type="number"
         value={Number(value).toString()}
         onChange={handleChange}
-        min="0"
+        min={min}
         className="w-full p-2 border rounded-md"
       />
       <div className="flex items-center ml-2">

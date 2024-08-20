@@ -6,5 +6,7 @@
     "this_item_is_cheaper": "This item is cheaper",
     "this_item_is_more_expensive": "This item is more expensive",
     "both_items_have_the_same_price_per_quantity": "Both items have the same price per quantity",
-    "other_item_in_same_quantity": "Other item in same quantity ${{price}}"
+    "other_item_in_same_quantity": "Other item in same quantity ${{price}}",
+    "input_error": "Invalid input",
+    "please_enter_valid_number": "Quantity must be greater than 0"
 }

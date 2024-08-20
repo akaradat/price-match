@@ -6,5 +6,7 @@
     "this_item_is_cheaper": "สินค้านี้ถูกกว่า",
     "this_item_is_more_expensive": "สินค้านี้แพงกว่า",
     "both_items_have_the_same_price_per_quantity": "ราคาเท่ากัน",
-    "other_item_in_same_quantity": "สินค้าอีกชิ้นในปริมาณเท่ากัน ฿{{price}}"
+    "other_item_in_same_quantity": "สินค้าอีกชิ้นในปริมาณเท่ากัน ฿{{price}}",
+    "input_error": "กรอกข้อมูลผิด",
+    "please_enter_valid_number": "ปริมาณต้องมากกว่า 0"
 }

@@ -19,18 +19,20 @@ function ProductDetail({
 
   const size = isAdvanced ? quantity * volumn : quantity;
 
-  let comparison = t('both_items_have_the_same_price_per_quantity');
-  let textColor = '';
-  let comparisonColor = 'bg-white';
+  let summaryHeader = t('both_items_have_the_same_price_per_quantity');
+  let summaryDetail = t('other_item_in_same_quantity', { price: (isNaN(otherPriceQuantityRatio) || !isFinite(otherPriceQuantityRatio)) ? 0 : (otherPriceQuantityRatio * size).toFixed(2) })
+  let summaryBackgroundColor = 'bg-white';
 
-  if (ownPriceQuantityRatio < otherPriceQuantityRatio) {
-    comparison = t('this_item_is_cheaper');
-    comparisonColor = 'bg-lime-400';
-    textColor = 'text-black';
+  if (size === 0) {
+    summaryHeader = t('please_enter_valid_number');
+    summaryDetail = t('please_enter_valid_number');
+    summaryBackgroundColor = 'bg-red-500';
+  } else if (ownPriceQuantityRatio < otherPriceQuantityRatio) {
+    summaryHeader = t('this_item_is_cheaper');
+    summaryBackgroundColor = 'bg-lime-400';
   } else if (ownPriceQuantityRatio > otherPriceQuantityRatio) {
-    comparison = t('this_item_is_more_expensive');
-    comparisonColor = 'bg-orange-500';
-    textColor = 'text-black';
+    summaryHeader = t('this_item_is_more_expensive');
+    summaryBackgroundColor = 'bg-orange-500';
   }
 
   return (
@@ -48,22 +50,20 @@ function ProductDetail({
 
         <div className={`flex items-center ${isAdvanced ? '' : 'hidden'}`}>
           <div className="w-1/3">
-            <NumericInput value={quantity} setValue={setQuantity} step={1} />
+            <NumericInput value={quantity} setValue={setQuantity} step={1} min={1} />
           </div>
           <div className="w-2/3 ml-2">
-            <NumericInput value={volumn} setValue={setVolumn} step={50} />
+            <NumericInput value={volumn} setValue={setVolumn} step={50} min={1} />
           </div>
         </div>
 
         <div className={`${isAdvanced ? 'hidden' : ''}`}>
-          <NumericInput c value={quantity} setValue={setQuantity} step={1} />
+          <NumericInput c value={quantity} setValue={setQuantity} step={1} min={1} />
         </div>
 
-        <div className={`p-4 mt-4 rounded-lg shadow-md text-center ${textColor} ${comparisonColor}`}>
-          <p className='text-lg font-bold'>{comparison}</p>
-          <p>
-            {t('other_item_in_same_quantity', { price: (otherPriceQuantityRatio * size).toFixed(2) })}
-          </p>
+        <div className={`p-4 mt-4 rounded-lg shadow-md text-center text-black ${summaryBackgroundColor}`}>
+          <p className='text-lg font-bold'>{summaryHeader}</p>
+          <p>{summaryDetail}</p>
         </div>
       </div>
     </div>
