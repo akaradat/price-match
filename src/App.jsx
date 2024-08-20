@@ -46,44 +46,60 @@ function App() {
 
   return (
     <div className="min-h-dvh flex flex-col">
-      <div className="absolute top-4 right-4 z-20">
-        <label className="inline-flex items-center cursor-pointer">
-          <span className="text-sm font-medium text-gray-900">{t(isAdvanced ? 'advance_mode' : 'basic_mode')}</span>
-          <input className="sr-only peer" type="checkbox" checked={isAdvanced} onChange={toggleMode} />
-          <div className="ms-3 relative w-11 h-6 rounded-full peer bg-gray-300 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-300"></div>
-        </label>
+      <header className="w-full bg-teal-500 text-white p-2 flex justify-between items-center z-30">
+        <h1 className="text-xl font-bold">PriceMatch เทียบราคา</h1>
+        <div className="flex space-x-4">
+          <label className="inline-flex items-center cursor-pointer">
+            <span className="text-sm font-medium text-white">
+              {t(isAdvanced ? 'advance_mode' : 'basic_mode')}
+            </span>
+            <input
+              className="sr-only peer"
+              type="checkbox"
+              checked={isAdvanced}
+              onChange={toggleMode}
+            />
+            <div className="ms-3 relative w-11 h-6 rounded-full peer bg-gray-300 peer-checked:after:translate-x-full peer-checked:bg-gray-600 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-white"></div>
+          </label>
+        </div>
+      </header>
+      <div className="relative flex-grow flex flex-col">
+        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
+          <button
+            className={`bg-teal-300 p-2 rounded-full shadow-md ${isRotating ? 'animate-spin-fast' : ''}`}
+            onClick={onReset}
+          >
+            <img src={resetIcon} alt="Reset" className="w-8 h-8" />
+          </button>
+        </div>
+
+        <ProductDetail
+          bgColor="bg-gray-100"
+          icon={smallIcon}
+          isAdvanced={isAdvanced}
+          price={price1}
+          setPrice={setPrice1}
+          quantity={quantity1}
+          setQuantity={setQuantity1}
+          volumn={volumn1}
+          setVolumn={setVolumn1}
+          ownPriceQuantityRatio={ownPriceQuantityRatio1}
+          otherPriceQuantityRatio={ownPriceQuantityRatio2}
+        />
+        <ProductDetail
+          bgColor="bg-gray-200"
+          icon={mediumIcon}
+          isAdvanced={isAdvanced}
+          price={price2}
+          setPrice={setPrice2}
+          quantity={quantity2}
+          setQuantity={setQuantity2}
+          volumn={volumn2}
+          setVolumn={setVolumn2}
+          ownPriceQuantityRatio={ownPriceQuantityRatio2}
+          otherPriceQuantityRatio={ownPriceQuantityRatio1}
+        />
       </div>
-      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-        <button className={`bg-teal-300 p-2 rounded-full shadow-md ${isRotating ? 'animate-spin-fast' : ''}`} onClick={onReset}>
-          <img src={resetIcon} alt="Reset" className="w-8 h-8" />
-        </button>
-      </div>
-      <ProductDetail
-        bgColor="bg-gray-100"
-        icon={smallIcon}
-        isAdvanced={isAdvanced}
-        price={price1}
-        setPrice={setPrice1}
-        quantity={quantity1}
-        setQuantity={setQuantity1}
-        volumn={volumn1}
-        setVolumn={setVolumn1}
-        ownPriceQuantityRatio={ownPriceQuantityRatio1}
-        otherPriceQuantityRatio={ownPriceQuantityRatio2}
-      />
-      <ProductDetail
-        bgColor="bg-gray-200"
-        icon={mediumIcon}
-        isAdvanced={isAdvanced}
-        price={price2}
-        setPrice={setPrice2}
-        quantity={quantity2}
-        setQuantity={setQuantity2}
-        volumn={volumn2}
-        setVolumn={setVolumn2}
-        ownPriceQuantityRatio={ownPriceQuantityRatio2}
-        otherPriceQuantityRatio={ownPriceQuantityRatio1}
-      />
     </div>
   );
 }
