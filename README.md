@@ -1,8 +1,14 @@
-# React + Vite
+<p align="center">
+  <img src="public/logo-description.png" alt="PriceMatch Logo" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# PriceMatch เทียบราคา
 
-Currently, two official plugins are available:
+PriceMatch is a React application that allows users to compare prices between products. The application supports both basic and advanced modes, and includes integration with Google Tag Manager (GTM) for event tracking.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Price Comparison**: Easily compare prices between two products.
+- **Mode Toggle**: Switch between basic and advanced modes for more detailed comparisons.
+- **Reset Functionality**: Reset all inputs with a single click.
+- **Google Tag Manager (GTM) Integration**: Track user interactions using GTM.
