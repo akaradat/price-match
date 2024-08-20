@@ -1,0 +1,10 @@
+{
+    "advance_mode": "Advance",
+    "basic_mode": "Basic",
+    "price": "Price",
+    "quantity": "Quantity",
+    "this_item_is_cheaper": "This item is cheaper",
+    "this_item_is_more_expensive": "This item is more expensive",
+    "both_items_have_the_same_price_per_quantity": "Both items have the same price per quantity",
+    "other_item_in_same_quantity": "Other item in same quantity ${{price}}"
+}
