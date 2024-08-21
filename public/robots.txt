@@ -1,4 +1,4 @@
 User-agent:*
 Allow: /
 
-Sitemap: https://akaradat.github.io/price-match/sitemap_index.xml
+Sitemap: https://akaradat.github.io/price-match/sitemap.xml
