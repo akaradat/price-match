@@ -64,9 +64,9 @@ function App() {
   return (
     <div className="min-h-dvh flex flex-col">
       <header className="w-full bg-teal-500 text-white p-2 flex justify-between items-center z-30">
-        <div class="flex items-center space-x-2">
-          <img src={logoIcon} alt="Logo" class="w-8 h-8" />
-          <h1 class="text-xl font-bold">PriceMatch เทียบราคา</h1>
+        <div className="flex items-center space-x-2">
+          <img src={logoIcon} alt="Logo" className="w-8 h-8" />
+          <h1 className="text-xl font-bold">PriceMatch เทียบราคา</h1>
         </div>
         <div className="flex space-x-4">
           <label className="inline-flex items-center cursor-pointer">
