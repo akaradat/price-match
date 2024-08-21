@@ -1,7 +1,8 @@
 {
   "name": "price-match",
   "private": true,
-  "version": "0.0.0",
+  "homepage": "https://akaradat.github.io/price-match/",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
