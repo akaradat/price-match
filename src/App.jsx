@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import ProductDetail from './ProductDetail';
 import smallIcon from './assets/small.svg';
 import mediumIcon from './assets/medium.svg';
-import resetIcon from './assets/reset.svg';
 import logoIcon from './assets/logo.png';
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
   const [isAdvanced, setIsAdvanced] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
 
-  const toggleMode = (e) => {
+  const toggleMode = () => {
     setIsAdvanced((prevMode) => !prevMode);
 
     window.dataLayer.push({
@@ -44,6 +43,10 @@ function App() {
   const ownPriceQuantityRatio2 = price2 / size2;
 
   const onReset = () => {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(100);
+    }
+
     setPrice1(0);
     setQuantity1(1);
     setVolumn1(100);
@@ -62,7 +65,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-dvh flex flex-col">
+    <div className="min-h-dvh flex flex-col overflow-hidden">
       <header className="w-full bg-teal-500 text-white p-2 flex justify-between items-center z-30">
         <div className="flex items-center space-x-2">
           <img src={logoIcon} alt="Logo" className="w-8 h-8" />
@@ -85,8 +88,8 @@ function App() {
       </header>
       <div className="relative flex-grow flex flex-col">
         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-          <button className={`bg-teal-300 p-2 rounded-full shadow-md}`} onClick={onReset}>
-            <img src={resetIcon} alt="Reset" className={`w-8 h-8 ${isRotating ? 'animate-spin-fast' : ''}`} />
+          <button className="border bg-white rounded-full shadow-md" onClick={onReset}>
+            <img src={logoIcon} alt="Reset" className={`w-14 h-14 ${isRotating ? 'animate-spin-zoom' : ''}`} />
           </button>
         </div>
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/logo-description.png" alt="PriceMatch Logo" />
+  <img src="public/logo-detail-square.png" alt="PriceMatch Logo" />
 </p>
 
 # PriceMatch เทียบราคา

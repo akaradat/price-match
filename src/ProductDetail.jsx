@@ -21,7 +21,11 @@ function ProductDetail({
   const size = isAdvanced ? quantity * volumn : quantity;
 
   let summaryHeader = t('both_items_have_the_same_price_per_quantity');
-  let summaryDetail = t('other_item_in_same_quantity', { price: (isNaN(otherPriceQuantityRatio) || !isFinite(otherPriceQuantityRatio)) ? 0 : (otherPriceQuantityRatio * size).toFixed(2) })
+  let summaryDetail = t('other_item_in_same_quantity', {
+    price: (isNaN(otherPriceQuantityRatio) || !isFinite(otherPriceQuantityRatio))
+      ? 0
+      : (otherPriceQuantityRatio * size).toLocaleString(undefined, { maximumFractionDigits: 2 })
+  })
   let summaryBackgroundColor = 'bg-white';
 
   if (size === 0) {
@@ -49,25 +53,20 @@ function ProductDetail({
 
         <label className="block mb-2 font-semibold">{t('quantity')}</label>
 
-        <div className={`flex items-center ${isAdvanced ? '' : 'hidden'}`}>
-          <div className="w-1/3">
+        <div className={`flex items-center`}>
+          <div className={`transition-all ease-in duration-100 min-w-min ${isAdvanced ? 'w-1/3' : 'w-full'}`}>
             <NumericInput value={quantity} setValue={setQuantity} step={1} min={1} name={`${name}-quantity`} />
           </div>
-          <div className="w-2/3 ml-2">
+          <div className={`transition-all ease-in duration-100 ${isAdvanced ? 'w-2/3 ml-2 animate-fade-in' : 'w-0 animate-fade-out'}`}>
             <NumericInput value={volumn} setValue={setVolumn} step={50} min={1} name={`${name}-volumn`} />
           </div>
         </div>
-
-        <div className={`${isAdvanced ? 'hidden' : ''}`}>
-          <NumericInput c value={quantity} setValue={setQuantity} step={1} min={1} name={`${name}-quantity-only`} />
-        </div>
-
         <div className={`p-4 mt-4 rounded-lg shadow-md text-center text-black ${summaryBackgroundColor}`}>
           <p className='text-lg font-bold'>{summaryHeader}</p>
           <p>{summaryDetail}</p>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
