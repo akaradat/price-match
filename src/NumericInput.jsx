@@ -63,10 +63,10 @@ function NumericInput({ name, value, setValue, min = 0, step = 1 }) {
         className="w-full min-w-12 p-2 border rounded-md"
       />
       <div className="flex items-center ml-2">
-        <button onClick={handleIncrement} className='transform active:scale-90 transition-transform'>
+        <button onClick={handleIncrement} className='bg-white rounded-full transform active:scale-90 transition-transform'>
           <img src={upIcon} alt="Increment" className="w-8 h-8 max-w-none" />
         </button>
-        <button onClick={handleDecrement} className="ml-2 transform active:scale-90 transition-transform">
+        <button onClick={handleDecrement} className="ml-2 bg-white rounded-full transform active:scale-90 transition-transform">
           <img src={downIcon} alt="Decrement" className="w-8 h-8 max-w-none" />
         </button>
       </div>
