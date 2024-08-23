@@ -12,7 +12,7 @@ function App() {
     page: {
       url: location,
       title: document.title,
-    }
+    },
   });
 
   const { t } = useTranslation();
@@ -43,7 +43,7 @@ function App() {
   const ownPriceQuantityRatio2 = price2 / size2;
 
   const onReset = () => {
-    if ("vibrate" in navigator) {
+    if ('vibrate' in navigator) {
       navigator.vibrate(100);
     }
 
@@ -62,7 +62,7 @@ function App() {
     setTimeout(() => {
       setIsRotating(false);
     }, 300);
-  }
+  };
 
   return (
     <div className="min-h-dvh flex flex-col overflow-hidden">
@@ -88,8 +88,15 @@ function App() {
       </header>
       <div className="relative flex-grow flex flex-col">
         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-          <button className="border bg-white rounded-full shadow-md" onClick={onReset}>
-            <img src={logoIcon} alt="Reset" className={`w-14 h-14 ${isRotating ? 'animate-spin-zoom' : ''}`} />
+          <button
+            className="border bg-white rounded-full shadow-md"
+            onClick={onReset}
+          >
+            <img
+              src={logoIcon}
+              alt="Reset"
+              className={`w-14 h-14 ${isRotating ? 'animate-spin-zoom' : ''}`}
+            />
           </button>
         </div>
 

@@ -1,0 +1,233 @@
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/01NLQX58UBR
+-->
+
+<style>
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 45%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --chart-1: 173 58% 39%;
+        --chart-2: 12 76% 61%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+
+    img[src="/placeholder.svg"],
+    img[src="/placeholder-user.jpg"] {
+        filter: sepia(.3) hue-rotate(-60deg) saturate(.5) opacity(0.8)
+    }
+</style>
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Inter', sans-serif;
+        --font-sans-serif: 'Inter';
+    }
+</style>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        --font-sans-serif: 'Inter';
+    }
+</style>
+<div class="bg-background text-foreground min-h-screen flex flex-col">
+    <header class="bg-card text-card-foreground shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-4 py-2">
+            <a class="flex items-center gap-2" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-6 w-6">
+                    <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+                <span class="font-semibold text-lg">Acme Inc</span>
+            </a>
+            <button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 lg:hidden"
+                type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r0:"
+                data-state="closed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-6 w-6">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <span class="sr-only">Toggle navigation menu</span>
+            </button>
+        </div>
+    </header>
+    <div class="flex-1 flex items-center justify-center px-4 py-10">
+        <div class="w-full grid gap-8">
+            <div class="border p-6 rounded-lg shadow-lg bg-primary text-primary-foreground" data-v0-t="card">
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-2xl font-bold">Product A</div>
+                    <div class="flex items-center gap-2 text-4xl font-bold">
+                        <span class="text-4xl font-bold">$</span>
+                        <div class="flex items-center">
+                            <input
+                                class="flex h-10 rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-40 text-right text-4xl text-foreground"
+                                type="number" value="99.99" />
+                            <div class="flex flex-col ml-2">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Size</div>
+                    <div class="text-2xl font-bold">
+                        <div class="flex items-center">
+                            <input
+                                class="flex h-10 rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-40 text-right text-2xl text-foreground"
+                                type="number" value="5000" />
+                            <div class="flex flex-col ml-2">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Comparison</div>
+                    <div class="text-2xl font-bold">Cheapest</div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Same Size Price</div>
+                    <div class="text-2xl font-bold">$149.99</div>
+                </div>
+            </div>
+            <div class="border bg-card text-card-foreground p-6 rounded-lg shadow-lg" data-v0-t="card">
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-2xl font-bold">Product B</div>
+                    <div class="flex items-center gap-2 text-4xl font-bold">
+                        <span class="text-4xl font-bold">$</span>
+                        <div class="flex items-center">
+                            <input
+                                class="flex h-10 rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-40 text-right text-4xl text-foreground"
+                                type="number" value="149.99" />
+                            <div class="flex flex-col ml-2">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Size</div>
+                    <div class="text-2xl font-bold">
+                        <div class="flex items-center">
+                            <input
+                                class="flex h-10 rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-32 text-right text-2xl text-foreground"
+                                type="number" value="5000" />
+                            <div class="flex flex-col ml-2">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-10 text-muted-foreground hover:bg-muted/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Comparison</div>
+                    <div class="text-2xl font-bold">More Expensive</div>
+                </div>
+                <div class="flex flex-col items-center justify-between mb-4">
+                    <div class="text-muted-foreground">Same Size Price</div>
+                    <div class="text-2xl font-bold">$99.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed bottom-4 right-4">
+        <button
+            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 rounded-full p-3 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                <path d="M21 3v5h-5"></path>
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                <path d="M8 16H3v5"></path>
+            </svg>
+        </button>
+    </div>
+</div>

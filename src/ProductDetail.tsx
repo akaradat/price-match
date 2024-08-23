@@ -22,10 +22,13 @@ function ProductDetail({
 
   let summaryHeader = t('both_items_have_the_same_price_per_quantity');
   let summaryDetail = t('other_item_in_same_quantity', {
-    price: (isNaN(otherPriceQuantityRatio) || !isFinite(otherPriceQuantityRatio))
-      ? 0
-      : (otherPriceQuantityRatio * size).toLocaleString(undefined, { maximumFractionDigits: 2 })
-  })
+    price:
+      isNaN(otherPriceQuantityRatio) || !isFinite(otherPriceQuantityRatio)
+        ? 0
+        : (otherPriceQuantityRatio * size).toLocaleString(undefined, {
+            maximumFractionDigits: 2,
+          }),
+  });
   let summaryBackgroundColor = 'bg-white';
 
   if (size === 0) {
@@ -49,24 +52,51 @@ function ProductDetail({
       </div>
       <div className="w-full max-w-md">
         <label className="block mb-2 font-semibold">{t('price')}</label>
-        <NumericInput value={price} setValue={setPrice} step={5} name={`${name}-price`} />
+        <NumericInput
+          value={price}
+          setValue={setPrice}
+          step={5}
+          name={`${name}-price`}
+        />
 
         <label className="block mb-2 font-semibold">{t('quantity')}</label>
 
         <div className={`flex items-center`}>
-          <div className={`transition-all ease-in duration-100 min-w-min ${isAdvanced ? 'w-1/3' : 'w-full'}`}>
-            <NumericInput value={quantity} setValue={setQuantity} step={1} min={1} name={`${name}-quantity`} />
+          <div
+            className={`transition-all ease-in duration-100 min-w-min ${
+              isAdvanced ? 'w-1/3' : 'w-full'
+            }`}
+          >
+            <NumericInput
+              value={quantity}
+              setValue={setQuantity}
+              step={1}
+              min={1}
+              name={`${name}-quantity`}
+            />
           </div>
-          <div className={`transition-all ease-in duration-100 ${isAdvanced ? 'w-2/3 ml-2 animate-fade-in' : 'w-0 animate-fade-out'}`}>
-            <NumericInput value={volumn} setValue={setVolumn} step={50} min={1} name={`${name}-volumn`} />
+          <div
+            className={`transition-all ease-in duration-100 ${
+              isAdvanced ? 'w-2/3 ml-2 animate-fade-in' : 'w-0 animate-fade-out'
+            }`}
+          >
+            <NumericInput
+              value={volumn}
+              setValue={setVolumn}
+              step={50}
+              min={1}
+              name={`${name}-volumn`}
+            />
           </div>
         </div>
-        <div className={`p-4 mt-4 rounded-lg shadow-md text-center text-black ${summaryBackgroundColor}`}>
-          <p className='text-lg font-bold'>{summaryHeader}</p>
+        <div
+          className={`p-4 mt-4 rounded-lg shadow-md text-center text-black ${summaryBackgroundColor}`}
+        >
+          <p className="text-lg font-bold">{summaryHeader}</p>
           <p>{summaryDetail}</p>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
